@@ -1,7 +1,4 @@
 #include <bits/stdc++.h>
-#define deb(x) cout << #x << "=" << x << '\n'
-#define deb2(x, y) cout << #x << "=" << x << "," << #y << "=" << y << '\n'
-#define deb3(x, y, z) cout << #x << "=" << x << "," << #y << "=" << y << "," << #z << "=" << z << '\n'
 #define pb push_back
 #define vi vector
 #define pii pair<int, int>
@@ -51,10 +48,9 @@ int main()
 
     while (t--)
     {
-        // code your logic here
     }
 
     return 0;
 }
 
-// Om's SOlution
+// Om's Solution
