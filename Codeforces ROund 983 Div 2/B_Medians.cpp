@@ -15,11 +15,11 @@ using namespace std;
 #define ll long long int
 #define all(p) p.begin(), p.end()
 #define um unordered_map
-#define ok(x)              \
-    {                      \
-        cout << x << endl; \
-        return;            \
-    }
+#define ok(x)          \
+  {                    \
+    cout << x << endl; \
+    return;            \
+  }
 
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
@@ -30,18 +30,18 @@ void solve()
 int main()
 {
 
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;
-    cin >> t;
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
+  int t;
+  cin >> t;
 
-    while (t--)
-    {
-        solve();
-    }
+  while (t--)
+  {
+    solve();
+  }
 
-    return 0;
+  return 0;
 }
 
 // Om's Solution

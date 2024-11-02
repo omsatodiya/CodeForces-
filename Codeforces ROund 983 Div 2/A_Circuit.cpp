@@ -15,33 +15,48 @@ using namespace std;
 #define ll long long int
 #define all(p) p.begin(), p.end()
 #define um unordered_map
-#define ok(x)              \
-    {                      \
-        cout << x << endl; \
-        return;            \
-    }
+#define ok(x)          \
+  {                    \
+    cout << x << endl; \
+    return;            \
+  }
 
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
 void solve()
 {
+  int n;
+  cin >> n;
+  vector<int> arr(2 * n);
+  int cntOnes = 0;
+
+  for (int i = 0; i < 2 * n; i++)
+  {
+    cin >> arr[i];
+    if (arr[i] == 1)
+      cntOnes++;
+  }
+
+  int mini = (cntOnes % 2 == 0) ? 0 : 1;
+  int maxi = (cntOnes <= n) ? cntOnes : (2 * n - cntOnes);
+
+  cout << mini << " " << maxi << endl;
 }
 
 int main()
 {
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
 
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;
-    cin >> t;
+  int t;
+  cin >> t;
+  while (t--)
+  {
+    solve();
+  }
 
-    while (t--)
-    {
-        solve();
-    }
-
-    return 0;
+  return 0;
 }
 
 // Om's Solution
