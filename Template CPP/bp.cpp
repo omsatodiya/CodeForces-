@@ -21,6 +21,30 @@ using namespace std;
         return;            \
     }
 
+// Bit Manipulation
+
+bool isPowerOfTwo(unsigned int n)
+{
+    return n && !(n & (n - 1));
+}
+
+bool isDivisibleByPowerOf2(int n, int k)
+{
+    int powerOf2 = 1 << k;
+    return (n & (powerOf2 - 1)) == 0;
+}
+
+int countSetBits(int n)
+{
+    int count = 0;
+    while (n)
+    {
+        n = n & (n - 1);
+        count++;
+    }
+    return count;
+}
+
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
 void solve()
