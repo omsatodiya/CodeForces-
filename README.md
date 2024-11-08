@@ -1,12 +1,29 @@
-**CodeForces Solutions**
+# CodeForces Solutions
 
-This repository contains all the solutions to problems I've solved on Codeforces. It includes:
+This is my personal collection of solutions for CodeForces problems. I use this repo to keep track of the problems I've solved and to revisit my solutions and techinques when needed.
 
-**- Contest Solutions**
+## What's Here
 
-**- Practice Problem Solutions**
+- Solutions to problems from CodeForces contests.
+- Practice problem solutions that I worked on.
+- All solutions are written in C++.
 
-**- Miscellaneous Challenges**
+## How to Use
 
+1. Clone the repo:
 
-This is primarily for my personal use to keep track of my progress and store my solutions.
+   ```bash
+   git clone https://github.com/omsatodiya/CodeForces-.git
+2. Browse through the folders to find the solutions.
+
+3. Compile and run the code using a C++ compiler:
+
+   ```bash
+   g++ solution.cpp -o solution
+    
+   ./solution
+
+## NOTE
+
+This is a personal project, so the code may not be perfect or optimized. Feel free to check it out and use any part of it for learning or reference.
+
