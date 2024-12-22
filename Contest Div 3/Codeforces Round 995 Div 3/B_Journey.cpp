@@ -16,31 +16,48 @@ using namespace std;
 #define ll long long int
 #define all(p) p.begin(), p.end()
 #define um unordered_map
-#define ok(x)              \
-    {                      \
-        cout << x << endl; \
-        return;            \
-    }
+#define ok(x)          \
+  {                    \
+    cout << x << endl; \
+    return;            \
+  }
 
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
 void solve()
 {
+  long long n, a, b, c;
+  cin >> n >> a >> b >> c;
+
+  vll arr = {a, b, b};
+
+  ll sum = a + b + c;
+  ll full_cycles = n / sum;
+  ll dist = full_cycles * sum;
+  ll day = full_cycles * 3;
+
+  for (int i = 0; i < 3 && dist < n; i++)
+  {
+    dist += arr[i];
+    day++;
+  }
+
+  ok(day);
 }
 
 int main()
 {
 
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;
-    cin >> t;
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
+  int t;
+  cin >> t;
 
-    while (t--)
-    {
-        solve();
-    }
+  while (t--)
+  {
+    solve();
+  }
 
-    return 0;
+  return 0;
 }
