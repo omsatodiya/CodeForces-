@@ -25,5 +25,5 @@ This is my personal collection of solutions for CodeForces problems. I use this 
 
 ## NOTE
 
-This is a personal project, so the code may not be perfect or optimized. Feel free to check it out and use any part of it for learning or reference.
+This is a personal repository, so the code may not be perfect or optimized. Feel free to check it out and use any part of it for learning or reference.
 
