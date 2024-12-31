@@ -17,31 +17,53 @@ using namespace std;
 #define all(p) p.begin(), p.end()
 #define allR(p) p.rbegin(), p.rend()
 #define um unordered_map
-#define ok(x)              \
-    {                      \
-        cout << x << endl; \
-        return;            \
-    }
+#define ok(x)          \
+  {                    \
+    cout << x << endl; \
+    return;            \
+  }
 
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
 void solve()
 {
+  bool ans = false;
+  int n;
+  cin >> n;
+  vi a(n);
+  for (int i = 0; i < n; i++)
+    cin >> a[i];
+
+  int maxi = 0;
+  for (int i = 0; i < n; i++)
+  {
+    int currMaxi = a[i];
+    int currLen = 0;
+    for (int j = i; j < n; j++)
+    {
+      if (a[j] <= currMaxi)
+      {
+        currLen++;
+      }
+    }
+    maxi = max(maxi, currLen);
+  }
+  ok(n - maxi)
 }
 
 int main()
 {
 
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;
-    cin >> t;
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
+  int t;
+  cin >> t;
 
-    while (t--)
-    {
-        solve();
-    }
+  while (t--)
+  {
+    solve();
+  }
 
-    return 0;
+  return 0;
 }

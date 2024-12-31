@@ -17,31 +17,56 @@ using namespace std;
 #define all(p) p.begin(), p.end()
 #define allR(p) p.rbegin(), p.rend()
 #define um unordered_map
-#define ok(x)              \
-    {                      \
-        cout << x << endl; \
-        return;            \
-    }
+#define ok(x)          \
+  {                    \
+    cout << x << endl; \
+    return;            \
+  }
 
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
 void solve()
 {
+  int n, k;
+  cin >> n >> k;
+
+  vi arr(n);
+  for (int i = 0; i < n; i++)
+    cin >> arr[i];
+
+  sort(all(arr));
+
+  long long presum = 0, ans = k;
+  for (int i = 0; i < n; i++)
+  {
+    long long mul = (n - i);
+    long long sum = mul * arr[i] + presum;
+    presum += arr[i];
+    if (sum >= k)
+    {
+      break;
+    }
+    else
+    {
+      ans++;
+    }
+  }
+  ok(ans)
 }
 
 int main()
 {
 
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;
-    cin >> t;
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
+  int t;
+  cin >> t;
 
-    while (t--)
-    {
-        solve();
-    }
+  while (t--)
+  {
+    solve();
+  }
 
-    return 0;
+  return 0;
 }

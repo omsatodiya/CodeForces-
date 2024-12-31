@@ -15,33 +15,60 @@ using namespace std;
 #define ss second
 #define ll long long int
 #define all(p) p.begin(), p.end()
-#define allR(p) p.rbegin(), p.rend()
 #define um unordered_map
-#define ok(x)              \
-    {                      \
-        cout << x << endl; \
-        return;            \
-    }
+#define ok(x)          \
+  {                    \
+    cout << x << endl; \
+    return;            \
+  }
 
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
 void solve()
 {
+  int n;
+  cin >> n;
+  string s, r;
+  cin >> s >> r;
+
+  int cntZeroS = 0, cntOneS = 0;
+  for (int i = 0; i < n; i++)
+  {
+    if (s[i] == '0')
+      cntZeroS++;
+    else
+      cntOneS++;
+  }
+
+  for (int i = 0; i < n - 1; i++)
+  {
+    if (cntOneS == 0 || cntZeroS == 0)
+    {
+      ok("NO")
+    }
+
+    if (r[i] == '0')
+      cntOneS--;
+    else
+      cntZeroS--;
+  }
+
+  ok("YES");
 }
 
 int main()
 {
 
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;
-    cin >> t;
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
+  int t;
+  cin >> t;
 
-    while (t--)
-    {
-        solve();
-    }
+  while (t--)
+  {
+    solve();
+  }
 
-    return 0;
+  return 0;
 }
