@@ -17,30 +17,45 @@ using namespace std;
 #define all(p) p.begin(), p.end()
 #define allR(p) p.rbegin(), p.rend()
 #define um unordered_map
-#define ok(x)              \
-    {                      \
-        cout << x << endl; \
-        return;            \
-    }
+#define ok(x)          \
+  {                    \
+    cout << x << endl; \
+    return;            \
+  }
 
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
 void solve()
 {
+  int x, y, k;
+  cin >> x >> y >> k;
+
+  int ceilX = ceil((double)x / k);
+  int ceilY = ceil((double)y / k);
+
+  if (ceilX <= ceilY)
+  {
+    ok(2 * ceilY)
+  }
+  else
+  {
+    ok((2 * ceilX) - 1)
+  }
 }
 
 int main()
 {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;
-    cin >> t;
 
-    while (t--)
-    {
-        solve();
-    }
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
+  int t;
+  cin >> t;
 
-    return 0;
+  while (t--)
+  {
+    solve();
+  }
+
+  return 0;
 }

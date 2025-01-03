@@ -17,30 +17,58 @@ using namespace std;
 #define all(p) p.begin(), p.end()
 #define allR(p) p.rbegin(), p.rend()
 #define um unordered_map
-#define ok(x)              \
-    {                      \
-        cout << x << endl; \
-        return;            \
-    }
+#define ok(x)          \
+  {                    \
+    cout << x << endl; \
+    return;            \
+  }
 
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
 void solve()
 {
+  int n, k;
+  cin >> n >> k;
+  vi arr(n);
+  for (int i = 0; i < n; i++)
+    cin >> arr[i];
+
+  sort(allR(arr));
+
+  int score = 0;
+
+  for (int i = 0; i < n; i++)
+  {
+    if (i % 2 == 0)
+    {
+      score += arr[i];
+    }
+    else
+    {
+      int increase = min(k, arr[i - 1] - arr[i]);
+      arr[i] += increase;
+      k -= increase;
+      score -= arr[i];
+    }
+  }
+
+  // Output the final score
+  ok(score);
 }
 
 int main()
 {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;
-    cin >> t;
 
-    while (t--)
-    {
-        solve();
-    }
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
+  int t;
+  cin >> t;
 
-    return 0;
+  while (t--)
+  {
+    solve();
+  }
+
+  return 0;
 }

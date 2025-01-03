@@ -17,30 +17,69 @@ using namespace std;
 #define all(p) p.begin(), p.end()
 #define allR(p) p.rbegin(), p.rend()
 #define um unordered_map
-#define ok(x)              \
-    {                      \
-        cout << x << endl; \
-        return;            \
-    }
+#define ok(x)          \
+  {                    \
+    cout << x << endl; \
+    return;            \
+  }
 
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
 void solve()
 {
+  int n;
+  cin >> n;
+  string s;
+  cin >> s;
+
+  stack<int> st;
+  ll ans = 0;
+
+  for (ll i = 0; i < n; i++)
+  {
+    char curr = s[i];
+
+    if (curr == '_')
+    {
+      if (st.empty())
+      {
+        curr = '(';
+      }
+      else
+      {
+        curr = ')';
+      }
+    }
+
+    if (curr == ')')
+    {
+      if (!st.empty())
+      {
+        ans += i - st.top();
+        st.pop();
+      }
+    }
+    else
+    {
+      st.push(i);
+    }
+  }
+  ok(ans);
 }
 
 int main()
 {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;
-    cin >> t;
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
 
-    while (t--)
-    {
-        solve();
-    }
+  int t;
+  cin >> t;
 
-    return 0;
+  while (t--)
+  {
+    solve();
+  }
+
+  return 0;
 }
