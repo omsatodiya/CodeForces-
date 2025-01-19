@@ -1,0 +1,14 @@
+ 
+ ####### Bit Manipulation ########
+
+    - (1 << k) = 2 raise to k
+    - x & (1 << k) --> check if kth bit is set
+    - x ^ (1 << k) --> toggle the kth bit
+    - x | (1 << k) --> set the kth bit
+    - x & !(1 << k) --> unset the kth bit
+    - x & ((1 << k) - 1) --> x % 2 raise to k
+    - property: no. of set bits in A = x and no of set bits in B = y 
+      then no of set bits in (A^B) = z where z = even if (x + y is even) otherwise odd
+    -built in functions:
+      for counting no of set bits: __buitin_popcount(x) --> for long long __builtin_popcountll(x)
+

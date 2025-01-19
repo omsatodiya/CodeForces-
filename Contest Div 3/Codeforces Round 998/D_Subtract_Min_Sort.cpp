@@ -17,35 +17,65 @@ using namespace std;
 #define all(p) p.begin(), p.end()
 #define allR(p) p.rbegin(), p.rend()
 #define um unordered_map
-#define ok(x)              \
-    {                      \
-        cout << x << endl; \
-        return;            \
-    }
+#define ok(x)          \
+  {                    \
+    cout << x << endl; \
+    return;            \
+  }
 
 bool powerof2(int x)
 {
-    return x && !(x & (x - 1));
+  return x && !(x & (x - 1));
 }
 
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
 void solve()
 {
+  int n;
+  cin >> n;
+  vi arr(n);
+  for (int i = 0; i < n; i++)
+    cin >> arr[i];
+
+  bool flag = false;
+
+  for (int i = 0; i < n - 1; i++)
+  {
+    if (arr[i] > arr[i + 1])
+    {
+      flag = true;
+      break;
+    }
+    else
+    {
+      arr[i + 1] -= arr[i];
+      arr[i] = 0;
+    }
+  }
+
+  if (flag)
+  {
+    ok("NO")
+  }
+  else
+  {
+    ok("YES")
+  }
 }
 
 int main()
 {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;
-    cin >> t;
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
+  int t;
+  cin >> t;
 
-    while (t--)
-    {
-        solve();
-    }
+  while (t--)
+  {
+    solve();
+  }
 
-    return 0;
+  return 0;
 }

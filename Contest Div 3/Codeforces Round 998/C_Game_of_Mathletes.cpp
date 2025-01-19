@@ -17,35 +17,68 @@ using namespace std;
 #define all(p) p.begin(), p.end()
 #define allR(p) p.rbegin(), p.rend()
 #define um unordered_map
-#define ok(x)              \
-    {                      \
-        cout << x << endl; \
-        return;            \
-    }
+#define ok(x)          \
+  {                    \
+    cout << x << endl; \
+    return;            \
+  }
 
 bool powerof2(int x)
 {
-    return x && !(x & (x - 1));
+  return x && !(x & (x - 1));
 }
 
 /* ------------------------------------------------- TEMPLATE ENDS --------------------------------------------------*/
 
 void solve()
 {
+  int n, k;
+  cin >> n >> k;
+  vector<int> arr(n);
+  for (int i = 0; i < n; i++)
+    cin >> arr[i];
+
+  unordered_map<int, int> mp;
+  for (auto x : arr)
+  {
+    mp[x]++;
+  }
+
+  int score = 0;
+
+  for (auto &it : mp)
+  {
+    int num = it.first;
+    int count = it.second;
+    int req = k - num;
+    if (req == num)
+    {
+      score += mp[num] / 2;
+    }
+    else if (mp.count(req))
+    {
+      int pairs = min(mp[num], mp[req]);
+      score += pairs;
+      mp[num] -= pairs;
+      mp[req] -= pairs;
+    }
+  }
+
+  ok(score)
 }
 
 int main()
 {
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    int t;
-    cin >> t;
+  ios::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
+  int t;
+  cin >> t;
 
-    while (t--)
-    {
-        solve();
-    }
+  while (t--)
+  {
+    solve();
+  }
 
-    return 0;
+  return 0;
 }

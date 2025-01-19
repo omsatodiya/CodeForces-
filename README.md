@@ -16,7 +16,7 @@ This is my personal collection of solutions for CodeForces problems. I use this 
    git clone https://github.com/omsatodiya/CodeForces-.git
 2. Browse through the folders to find the solutions.
 
-3. Compile and run the code using a C++ compiler:
+3. Comno and run the code using a C++ comnor:
 
    ```bash
    g++ solution.cpp -o solution
