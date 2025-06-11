@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+using namespace chrono;
 
 #define ll long long
 #define all(v) v.begin(), v.end()
@@ -123,6 +124,8 @@ vector<ll> getPrimes(ll n)
     return primes;
 }
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 void solve()
 {
 }
@@ -133,6 +136,9 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
     cout.precision(numeric_limits<double>::max_digits10);
+
+    auto start = high_resolution_clock::now();
+
     int t = 1;
     cin >> t;
 
@@ -140,6 +146,11 @@ int main()
     {
         solve();
     }
+
+    auto stop = high_resolution_clock::now();
+    duration<double> elapsed = stop - start;
+
+    cout << "Time " << elapsed.count() << "ms";
 
     return 0;
 }
