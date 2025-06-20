@@ -150,7 +150,6 @@ int main()
     auto stop = high_resolution_clock::now();
     duration<double> elapsed = stop - start;
 
-    cout << "Time " << elapsed.count() << "ms";
-
+    cerr << "Time " << elapsed.count() << "ms";
     return 0;
 }
